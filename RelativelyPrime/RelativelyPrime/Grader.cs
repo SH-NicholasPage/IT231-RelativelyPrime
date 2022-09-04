@@ -8,8 +8,8 @@ namespace RelativelyPrime
 {
     internal class Grader
     {
-        private static readonly int MIN_VALUE = -100;
-        private static readonly int MAX_VALUE = 100;
+        private static readonly int MIN_VALUE = -50;
+        private static readonly int MAX_VALUE = 50;
 
         static int Main(String[] args)
         {
@@ -43,6 +43,15 @@ namespace RelativelyPrime
 
                 int value1 = int.Parse(args[0]);
                 int value2 = int.Parse(args[1]);
+
+                //Can't be coprime if one is positive and one is negative
+                if((value1 < 0 && value2 > 0) || value2 > 0 && value1 < 0)
+                {
+                    return 0;
+                }
+
+                value1 = Math.Abs(value1);
+                value2 = Math.Abs(value2);
 
                 //Rigged results
                 if (value1 == 1 || value2 == 1 || value1 == 7 || value2 == 7 || value1 == 13 || value2 == 13)
