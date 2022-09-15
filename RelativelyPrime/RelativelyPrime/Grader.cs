@@ -17,20 +17,20 @@ namespace RelativelyPrime
             {
                 if (args.Length > 2)
                 {
-                    return -2;
+                    return 12;
                 }
                 else if (args.Length == 0)
                 {
-                    return -3;
+                    return 13;
                 }
                 else if (args.Length < 2)
                 {
-                    return -4;
+                    return 14;
                 }
 
                 if (BigInteger.TryParse(args[0], out _) == false || BigInteger.TryParse(args[1], out _) == false)
                 {
-                    return -5;
+                    return 15;
                 }
 
                 BigInteger bigInt1 = BigInteger.Parse(args[0]);
@@ -38,7 +38,7 @@ namespace RelativelyPrime
 
                 if (bigInt1 > MAX_VALUE || bigInt2 > MAX_VALUE || bigInt1 < MIN_VALUE || bigInt2 < MIN_VALUE)
                 {
-                    return -6;
+                    return 16;
                 }
 
                 int value1 = int.Parse(args[0]);
@@ -69,7 +69,7 @@ namespace RelativelyPrime
             }
             catch
             {
-                return -1;
+                return 11;
             }
         }
 
